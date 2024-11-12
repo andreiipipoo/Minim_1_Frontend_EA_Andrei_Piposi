@@ -1,0 +1,17 @@
+<div class="session-times-container">
+    <h2>Session Times</h2>
+    <button (click)="createSessionTime()">Create Session Time</button>
+    <ul>
+      <li *ngFor="let sessionTime of sessionTimes" class="session-time-item">
+        <div class="session-time-details">
+          <p><strong>Start Time:</strong> {{ sessionTime.startTime | date:'short' }}</p>
+          <p><strong>End Time:</strong> {{ sessionTime.endTime | date:'short' }}</p>
+          <p><strong>Duration:</strong> {{ sessionTime.duration }} seconds</p>
+        </div>
+        <div class="session-time-actions">
+          <button (click)="updateSessionTime(sessionTime)">Update</button>
+          <button (click)="sessionTime._id ? deleteSessionTime(sessionTime._id) : null">Delete</button>
+        </div>
+      </li>
+    </ul>
+  </div>
